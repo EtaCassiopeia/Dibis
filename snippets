@@ -1,0 +1,203 @@
+
+
+
+
+
+def remoteConfig(hostname: String, port: Int, commonConfig: Config): Config = {
+  val configStr = s"""
+    akka.remote.netty.hostname = $hostname
+    akka.remote.netty.port = $port
+  """
+  ConfigFactory.parseString(configStr).withFallback(commonConfig)
+}
+
+val baseConfig = ConfigFactory.load()
+val akkaConfig = if (!baseConfig.getBoolean("my-app.do-something")) baseConfig
+else
+  Try(java.net.InetAddress.getLocalHost.getHostAddress).
+    map(remoteConfig(_, 0, baseConfig)).
+    getOrElse(baseConfig)
+
+val system = ActorSystem("foo", akkaConfig)
+------------------
+ val akkaConf = ConfigFactory.parseMap(conf.getAkkaConf.toMap[String, String])
+      .withFallback(akkaSslConfig).withFallback(ConfigFactory.parseString(
+      s"""
+      |akka.daemonic = on
+      |akka.loggers = [""akka.event.slf4j.Slf4jLogger""]
+      |akka.stdout-loglevel = "ERROR"
+      |akka.jvm-exit-on-fatal-error = off
+      |akka.remote.require-cookie = "$requireCookie"
+      |akka.remote.secure-cookie = "$secureCookie"
+      |akka.remote.transport-failure-detector.heartbeat-interval = $akkaHeartBeatIntervalS s
+      |akka.remote.transport-failure-detector.acceptable-heartbeat-pause = $akkaHeartBeatPausesS s
+      |akka.actor.provider = "akka.remote.RemoteActorRefProvider"
+      |akka.remote.netty.tcp.transport-class = "akka.remote.transport.netty.NettyTransport"
+      |akka.remote.netty.tcp.hostname = "$host"
+      |akka.remote.netty.tcp.port = $port
+      |akka.remote.netty.tcp.tcp-nodelay = on
+      |akka.remote.netty.tcp.connection-timeout = $akkaTimeoutS s
+      |akka.remote.netty.tcp.maximum-frame-size = ${akkaFrameSize}B
+      |akka.remote.netty.tcp.execution-pool-size = $akkaThreads
+      |akka.actor.default-dispatcher.throughput = $akkaBatchSize
+      |akka.log-config-on-start = $logAkkaConfig
+      |akka.remote.log-remote-lifecycle-events = $lifecycleEvents
+      |akka.log-dead-letters = $lifecycleEvents
+      |akka.log-dead-letters-during-shutdown = $lifecycleEvents
+      """.stripMargin))
+
+    val actorSystem = ActorSystem(name, akkaConf)
+    -------------------
+    def askWithReply[T](
+          message: Any,
+          actor: ActorRef,
+          timeout: FiniteDuration): T = {
+        askWithReply[T](message, actor, maxAttempts = 1, retryInterval = Int.MaxValue, timeout)
+      }
+
+      /**
+       * Send a message to the given actor and get its result within a default timeout, or
+       * throw a SparkException if this fails even after the specified number of retries.
+       */
+      def askWithReply[T](
+          message: Any,
+          actor: ActorRef,
+          maxAttempts: Int,
+          retryInterval: Long,
+          timeout: FiniteDuration): T = {
+        // TODO: Consider removing multiple attempts
+        if (actor == null) {
+          throw new SparkException(s"Error sending message [message = $message]" +
+            " as actor is null ")
+        }
+        var attempts = 0
+        var lastException: Exception = null
+        while (attempts < maxAttempts) {
+          attempts += 1
+          try {
+            val future = actor.ask(message)(timeout)
+            val result = Await.result(future, timeout)
+            if (result == null) {
+              throw new SparkException("Actor returned null")
+            }
+            return result.asInstanceOf[T]
+          } catch {
+            case ie: InterruptedException => throw ie
+            case e: Exception =>
+              lastException = e
+              logWarning(s"Error sending message [message = $message] in $attempts attempts", e)
+          }
+          if (attempts < maxAttempts) {
+            Thread.sleep(retryInterval)
+          }
+        }
+
+        throw new SparkException(
+          s"Error sending message [message = $message]", lastException)
+      }
+-------------------
+libraryDependencies ++= Seq(
+  "com.typesafe.akka" %% "akka-actor" % "2.3.5",
+  "com.typesafe.akka" %% "akka-cluster" % "2.3.5",
+  "com.typesafe.akka" %% "akka-slf4j" % "2.3.5",
+  "ch.qos.logback" % "logback-classic" % "1.1.2"
+)
+
+
+
+app {
+
+  # The Akka actor system will bind to this host and poort
+  # The default can be overwritten using the APP_HOST and APP_PORT env variables
+  # Note: Default host is `InetAddress.getLocalHost.getHostAddress`
+  host = ${?APP_HOST}
+  port = 8080
+  port = ${?APP_PORT}
+  # A seeds file can optionally be specified using the APP_SEEDS_FILE env variable
+  cluster.seedsFile = ${?APP_SEEDS_FILE}
+}
+
+akka {
+
+  # Required for Akka's cluster functionality
+  actor.provider = "akka.cluster.ClusterActorRefProvider"
+
+  remote {
+    enabled-transports = ["akka.remote.netty.tcp"]
+    log-remote-lifecycle-events = off
+    netty.tcp.hostname = ${?app.host}
+    netty.tcp.port = ${?app.port}
+  }
+
+  cluster.auto-down-unreachable-after = 10s
+
+  # Use SLF4J for logging
+  loggers = ["akka.event.slf4j.Slf4jLogger"]
+  loglevel = "DEBUG"
+  logging-filter = "akka.event.slf4j.Slf4jLoggingFilter"
+
+}
+--------------
+https://github.com/yahoo/kafka-manager/search?utf8=%E2%9C%93&q=curator
+
+
+---------------
+ class ActorWithProtocol extends Actor with Stash {
+     def receive = {
+       case "open" ⇒
+         unstashAll {
+           case "write" ⇒ // do writing...
+           case "close" ⇒
+             unstashAll()
+             context.unbecome()
+           case msg ⇒ stash()
+         }
+       case "done" ⇒ // done
+       case msg    ⇒ stash()
+     }
+   }
+
+
+    akka {
+      actor {
+        my-custom-dispatcher {
+          mailbox-type = "akka.dispatch.UnboundedDequeBasedMailbox"
+        }
+      }
+    }
+
+
+    ------------------
+    class A(db: ActorRef) extends Actor with Stash {
+      def receive = {
+        case Request =>
+          doWork()
+          db ! Persist
+          context.setReceiveTimeout(5.seconds)
+          context.become({
+            case Request        => stash()
+            case Persisted      => context.unbecome(); unstashAll()
+            case ReceiveTimeout => throw new TimeoutException("not persisted")
+          }, discardOld = false)
+      }
+    }
+
+    --------------
+    class QueueingActor(nextActor: ActorRef) extends Actor with Stash {
+      import QueueingActor._
+
+      def receive = {
+        case message =>
+          context.become({
+            case Resume =>
+              unstashAll()
+              context.unbecome()
+            case _ => stash()
+          })
+          nextActor ! message
+      }
+    }
+
+    object QueueingActor {
+      case class Resume()
+    }

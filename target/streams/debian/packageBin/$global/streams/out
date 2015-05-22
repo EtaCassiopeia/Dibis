@@ -1,0 +1,27 @@
+[0m[[0minfo[0m] [0mBuilding debian package with java based implementation 'jdeb'[0m
+[0m[[0minfo[0m] [0mCreating debian package: /home/mohsen/workspace/sahab/DistributedBloomFilterInquiryService/target/dibis_1.0_all.deb[0m
+[0m[[0mdebug[0m] [0mBuilding data[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/bin/dibis size:9849 mode:493 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:35 IRDT 2015 md5: ede0b8a34f0b3df5729bf18c12e1b5d4[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/dibis.dibis-1.0.jar size:79546 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: cac56fd8b44beb17b088cf0f723fe5cb[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/org.scala-lang.scala-library-2.10.5.jar size:7130772 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: ce57d5fc5022097e8134b8797271bed2[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/com.typesafe.akka.akka-remote_2.10-2.3.10.jar size:1352094 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: 2fcc6105a23b1d4889712d90d40b1098[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/com.typesafe.akka.akka-actor_2.10-2.3.10.jar size:2605169 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: bb3b5e99b2667522177481735f816396[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/com.typesafe.config-1.2.1.jar size:219554 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: 3aaf3c6e76a68e732c17d4a7e9877d81[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/io.netty.netty-3.8.0.Final.jar size:1230201 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: 11885d22da2135ed16cfa878986df207[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/com.google.protobuf.protobuf-java-2.5.0.jar size:533455 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: a44473b98947e2a54c54e0db1387d137[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/org.uncommons.maths.uncommons-maths-1.2.2a.jar size:49019 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: d79cfd8e50dba32fda872c999dad2cea[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/org.apache.curator.curator-framework-2.7.1.jar size:186273 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: 35bff30d2a79a8b0731269604b1327ee[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/org.apache.curator.curator-client-2.7.1.jar size:69500 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: 3b43933c18d1dcf15f88db73ee646396[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/org.apache.zookeeper.zookeeper-3.4.6.jar size:792964 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: 7d01d317c717268725896cfb81b18152[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/jline.jline-0.9.94.jar size:87325 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: 46235c960277206f00fe24714437bc89[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/com.google.guava.guava-16.0.1.jar size:2228009 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:36 IRDT 2015 md5: a68693df58191585d9af914cfbe6067a[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/org.apache.curator.curator-recipes-2.7.1.jar size:270342 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:37 IRDT 2015 md5: 156ad30fb9995b072175ae60fbb352a5[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/org.slf4j.log4j-over-slf4j-1.7.7.jar size:24220 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:37 IRDT 2015 md5: 93ab42a5216afd683c35988c6b6fc3d8[0m
+[0m[[0mdebug[0m] [0mfile:./usr/share/dibis/lib/org.slf4j.slf4j-api-1.7.7.jar size:29257 mode:420 linkname: username:root userid:0 groupname:root groupid:0 modtime:Sun May 10 10:31:37 IRDT 2015 md5: ca4280bf93d64367723ae5c8d42dd0b9[0m
+[0m[[0mdebug[0m] [0mdir: ./usr/share/dibis/[0m
+[0m[[0mdebug[0m] [0mlink:./usr/bin/dibis mode:33188 linkname:/usr/share/dibis/bin/dibis username:root userid:0 groupname:root groupid:0[0m
+[0m[[0mdebug[0m] [0mTotal size: 16897549[0m
+[0m[[0minfo[0m] [0mBuilding conffiles[0m
+[0m[[0mdebug[0m] [0mBuilding control[0m
+[0m[[0minfo[0m] [0mSkipping 'conffiles' generation. No entries provided.[0m
+[0m[[0minfo[0m] [0mCreating changes file: /home/mohsen/workspace/sahab/DistributedBloomFilterInquiryService/target/dibis_1.0_all.changes[0m

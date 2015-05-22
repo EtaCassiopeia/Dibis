@@ -1,0 +1,20 @@
+Format: 1.8
+Date: Sun, 10 May 2015 10:31:37 +0430
+Source: dibis
+Binary: dibis
+Architecture: all
+Version: 1.0
+Distribution: unknown
+Urgency: low
+Maintainer: Mohsen Zainalpour<zainalpour@yahoo.com>
+Changed-By: Mohsen Zainalpour<zainalpour@yahoo.com>
+Description:
+ dibis - A Distributed Bloom Filter
+Changes:
+ dibis (1.0) unknown; urgency=low
+Checksums-Sha1:
+ 3440a58ca10bcc7bcd4a3913eff33f4be3d26f68 15158512 dibis_1.0_all.deb
+Checksums-Sha256:
+ 5f5ea124356db75a8a26efd46436988c64b8a062930ebc596989a72112fe6f66 15158512 dibis_1.0_all.deb
+Files:
+ 289ffaca621f87d27652b9ba377c781e 15158512 java optional dibis_1.0_all.deb

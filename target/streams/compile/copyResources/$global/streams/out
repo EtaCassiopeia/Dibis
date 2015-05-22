@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/resources/inquiryservice.conf,/home/mohsen/workspace/DistributedBloomFilterInquiryService/target/scala-2.10/classes/inquiryservice.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/resources/common.conf,/home/mohsen/workspace/DistributedBloomFilterInquiryService/target/scala-2.10/classes/common.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/resources/remotelookup.conf,/home/mohsen/workspace/DistributedBloomFilterInquiryService/target/scala-2.10/classes/remotelookup.conf)[0m

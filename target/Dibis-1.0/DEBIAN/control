@@ -1,0 +1,10 @@
+Source: dibis
+Package: dibis
+Version: 1.0
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 16501
+Maintainer: Mohsen Zainalpour<zainalpour@yahoo.com>
+Description: A Distributed Bloom Filter
+ A Distributed Bloom Filter

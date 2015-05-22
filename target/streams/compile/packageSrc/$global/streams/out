@@ -1,0 +1,29 @@
+[0m[[0minfo[0m] [0mPackaging /home/mohsen/workspace/DistributedBloomFilterInquiryService/target/scala-2.10/dibis_2.10-1.0-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/service/bloomfilter/config/ZooKeeperConfiguration.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/service/bloomfilter/config/ZooKeeperConfiguration.scala[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/service/bloomfilter/ProxyActor.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/service/bloomfilter/ProxyActor.scala[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/bloomfilter/InfiniteBloomFilter.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/bloomfilter/InfiniteBloomFilter.scala[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/bloomfilter/FiniteBloomFilter.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/bloomfilter/FiniteBloomFilter.scala[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/bloomfilter/BloomFilter.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/bloomfilter/BloomFilter.scala[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/service/bloomfilter/BloomFilterApplication.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/service/bloomfilter/BloomFilterApplication.scala[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/service/bloomfilter/ExperimentalClientActor.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/service/bloomfilter/ExperimentalClientActor.scala[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/service/bloomfilter/config/ZooKeeper.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/service/bloomfilter/config/ZooKeeper.scala[0m
+[0m[[0mdebug[0m] [0m	common.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/resources/common.conf[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/service/bloomfilter/BloomFilterActor.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/service/bloomfilter/BloomFilterActor.scala[0m
+[0m[[0mdebug[0m] [0m	ir/sahab/inquiry/service/bloomfilter/DibisClient.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/scala/ir/sahab/inquiry/service/bloomfilter/DibisClient.scala[0m
+[0m[[0mdebug[0m] [0m	inquiryservice.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/resources/inquiryservice.conf[0m
+[0m[[0mdebug[0m] [0m	remotelookup.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/mohsen/workspace/DistributedBloomFilterInquiryService/src/main/resources/remotelookup.conf[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
